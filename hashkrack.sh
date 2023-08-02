@@ -23,6 +23,7 @@ clear
 # Print logo
 echo "${bold}${green}$logo${reset}"
 echo
+
 # Prompt user for input
 read -p "${bold}${red}[+]${green}    Enter the hash to crack: " hash_to_crack
 echo
