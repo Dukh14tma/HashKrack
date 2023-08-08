@@ -33,7 +33,7 @@ read -p "${bold}${green}[+] Enter the path to the wordlist file: ${yellow}" word
 
 # List of hashing algorithms
 algorithms=(
-  "md5" "sha1" "sha224" "sha256" "sha384" "sha512"
+  "md5" "sha1" "sha224" "sha256" "sha251" "sha384" "sha512"
   "ripemd160" "whirlpool" "tiger128,3" "tiger160,3"
   "tiger192,3" "tiger128,4" "tiger160,4" "tiger192,4"
   "snefru" "gost" "adler32" "crc32" "crc32b" "fnv132"
@@ -54,6 +54,7 @@ crack_hash() {
       "sha1")
         hash=$(echo -n "$password" | sha1sum | awk '{print $1}')
         ;;
+      
       # ... (other algorithm cases)
     esac
 
