@@ -68,8 +68,7 @@ crack_hash() {
 }
 
 # Run hash cracking in background threads
-for algorithm in "${algorithms[@]}"; do
-  echo "${bold}${red}Cracking using algorithm: $algorithm${reset}"
+for algorithm in "${algorithms[@]}";
   crack_hash "$algorithm" &
 done
 
