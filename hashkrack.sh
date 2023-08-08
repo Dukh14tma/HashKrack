@@ -33,11 +33,7 @@ read -p "${bold}${green}[+] Enter the path to the wordlist file: ${yellow}" word
 
 # List of hashing algorithms
 algorithms=(
-  "md5" "sha1" "sha224" "sha256" "sha251" "sha384" "sha512"
-  "ripemd160" "whirlpool" "tiger128,3" "tiger160,3"
-  "tiger192,3" "tiger128,4" "tiger160,4" "tiger192,4"
-  "snefru" "gost" "adler32" "crc32" "crc32b" "fnv132"
-  "fnv164" "joaat"
+  "md5" "sha1" "sha224" "sha256" "sha384" "sha512"
 )
 
 # Define the function to crack the hash
@@ -57,61 +53,12 @@ crack_hash() {
       "sha256")
         hash=$(echo -n "$password" | sha256sum | awk '{print $1}')
         ;;
-      "sha251")
-        hash=$(echo -n "$password" | sha251sum | awk '{print $1}')
-        ;;
       "sha384")
         hash=$(echo -n "$password" | sha384sum | awk '{print $1}')
         ;;
       "sha512")
         hash=$(echo -n "$password" | sha512sum | awk '{print $1}')
         ;;
-      "ripemd160") 
-        hash=$(echo -n "$password" | ripemd160sum | awk '{print $1}')
-        ;;
-      "whirlpool")
-        hash=$(echo -n "$password" | whirlpoolsum | awk '{print $1}')
-        ;;
-      "tiger128,3") 
-        hash=$(echo -n "$password" | tiger128,3sum | awk '{print $1}')
-        ;;
-      "tiger160,3")
-        hash=$(echo -n "$password" | tiger160,3sum | awk '{print $1}')
-        ;;
-      "tiger192,3")
-        hash=$(echo -n "$password" | tiger192,3sum | awk '{print $1}')
-        ;;
-      "tiger128,4")
-        hash=$(echo -n "$password" | tiger128,4sum | awk '{print $1}')
-        ;;
-      "tiger160,4")
-        hash=$(echo -n "$password" | tiger160,4sum | awk '{print $1}')
-        ;;
-      "tiger192,4")
-        hash=$(echo -n "$password" | tiger192,4sum | awk '{print $1}')
-        ;;
-      "snefru")
-        hash=$(echo -n "$password" | snefrusum | awk '{print $1}')
-        ;; 
-      "adler32") 
-        hash=$(echo -n "$password" | alder32sum | awk '{print $1}')
-        ;;
-      "crc32")
-        hash=$(echo -n "$password" | crc32sum | awk '{print $1}')
-        ;;
-      "crc32b") 
-        hash=$(echo -n "$password" | crc32bsum | awk '{print $1}')
-        ;;
-      "fnv132")
-        hash=$(echo -n "$password" | fnv132sum | awk '{print $1}')
-        ;;
-      "fnv164")
-        hash=$(echo -n "$password" | fnv164sum | awk '{print $1}')
-        ;;
-      "joaat")
-        hash=$(echo -n "$password" | joaatsum | awk '{print $1}')
-        ;;
-      # ... (other algorithm cases)
     esac
 
     if [[ $hash == $hash_to_crack ]]; then
