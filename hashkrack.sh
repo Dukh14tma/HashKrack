@@ -51,64 +51,64 @@ crack_hash() {
       "sha1")
         hash=$(echo -n "$password" | sha1sum | awk '{print $1}')
         ;;
-      "sha224"
+      "sha224")
         hash=$(echo -n "$password" | sha224sum | awk '{print $1}')
         ;;
-      "sha256" 
+      "sha256")
         hash=$(echo -n "$password" | sha256sum | awk '{print $1}')
         ;;
-      "sha251" 
+      "sha251")
         hash=$(echo -n "$password" | sha251sum | awk '{print $1}')
         ;;
-      "sha384" 
+      "sha384")
         hash=$(echo -n "$password" | sha384sum | awk '{print $1}')
         ;;
-      "sha512"
+      "sha512")
         hash=$(echo -n "$password" | sha512sum | awk '{print $1}')
         ;;
-      "ripemd160" 
+      "ripemd160") 
         hash=$(echo -n "$password" | ripemd160sum | awk '{print $1}')
         ;;
-      "whirlpool" 
+      "whirlpool")
         hash=$(echo -n "$password" | whirlpoolsum | awk '{print $1}')
         ;;
-      "tiger128,3" 
+      "tiger128,3") 
         hash=$(echo -n "$password" | tiger128,3sum | awk '{print $1}')
         ;;
-      "tiger160,3"
+      "tiger160,3")
         hash=$(echo -n "$password" | tiger160,3sum | awk '{print $1}')
         ;;
-      "tiger192,3" 
+      "tiger192,3")
         hash=$(echo -n "$password" | tiger192,3sum | awk '{print $1}')
         ;;
-      "tiger128,4" 
+      "tiger128,4")
         hash=$(echo -n "$password" | tiger128,4sum | awk '{print $1}')
         ;;
-      "tiger160,4" 
+      "tiger160,4")
         hash=$(echo -n "$password" | tiger160,4sum | awk '{print $1}')
         ;;
-      "tiger192,4"
+      "tiger192,4")
         hash=$(echo -n "$password" | tiger192,4sum | awk '{print $1}')
         ;;
-      "snefru" 
+      "snefru")
         hash=$(echo -n "$password" | snefrusum | awk '{print $1}')
         ;; 
-      "adler32" 
+      "adler32") 
         hash=$(echo -n "$password" | alder32sum | awk '{print $1}')
         ;;
-      "crc32" 
+      "crc32")
         hash=$(echo -n "$password" | crc32sum | awk '{print $1}')
         ;;
-      "crc32b" 
+      "crc32b") 
         hash=$(echo -n "$password" | crc32bsum | awk '{print $1}')
         ;;
-      "fnv132"
+      "fnv132")
         hash=$(echo -n "$password" | fnv132sum | awk '{print $1}')
         ;;
-      "fnv164" 
+      "fnv164")
         hash=$(echo -n "$password" | fnv164sum | awk '{print $1}')
         ;;
-      "joaat" 
+      "joaat")
         hash=$(echo -n "$password" | joaatsum | awk '{print $1}')
         ;;
       # ... (other algorithm cases)
