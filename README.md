@@ -11,3 +11,6 @@ As I told you in above this tool is easy to use
 first run the bash file
 then it will ask for hash file so write the hash value or paste the hash value
 then it will ask for wordlist write the path of wordlist or you can also use my wordlist
+
+# how to install
+$ git clone https://github.com/Dukh14tma/HashKrack
